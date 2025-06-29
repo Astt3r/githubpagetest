@@ -5,66 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Astt3r – Portfolio</title>
 
-  <!-- Fuente pixel -->
+  <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Iconos Devicon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css" />
 
-  <!-- Estilos principales -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- Sidebar -->
+<body class="starfield">
+  <!-- =============== SIDEBAR =============== -->
   <div class="sidebar">
     <div class="arrow">▶</div>
     <nav class="nav-links">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#skills">Tecnologías</a></li>
         <li><a href="projects.html">Proyectos</a></li>
-        <li><a href="technologies.html">Tecnologías</a></li>
         <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- Interruptor de tema -->
+  <!-- Switch Tema -->
   <label class="theme-switch">
-    <input type="checkbox" id="themeToggle">
+    <input type="checkbox" id="themeToggle" />
     <span class="slider"></span>
   </label>
 
-  <!-- ===== Contenido ===== -->
-  <main class="profile-main">
-    <section class="profile-card">
-      <div class="profile-img">
-        <!-- Ícono o foto -->
-        <img src="assets/avatar-placeholder.png" alt="Foto de Alejandro Robles">
+  <!-- =============== CONTENIDO =============== -->
+  <main>
+    <!-- ========= HERO ========= -->
+    <section id="hero" class="hero">
+      <img class="hero-avatar" src="assets/avatar.png" alt="Avatar de Alejandro Robles" />
+      <h1 class="hero-title"><span class="nickname">/Astt3r/</span></h1>
+      <h1 class="hero-title">Alejandro Robles</h1>
+      <h2 class="hero-sub">A Software Engineer & Indie Game Dev</h2>
+
+      <!-- Badges -->
+      <div class="badges">
+        <span class="badge" id="clClock">🇨🇱 --:--</span>
+        <span class="badge">💻 Él/He</span>
+        <span class="badge">🏋️ INTJ</span>
       </div>
-      <div class="profile-info">
-        <h1>Alejandro Robles</h1>
-        <h3>Chileno · 24 años</h3>
-        <p><strong>Ingeniero en Ejecución en Informática</strong></p>
-        <p>Desarrollador web & creador indie con gusto por los datos y el diseño.</p>
-        <ul class="tags">
-          <li class="tag">💻 Web Dev</li>
-          <li class="tag">🗃️ Bases de Datos</li>
-          <li class="tag">🎮 GameDev</li>
-          <li class="tag">🏋️‍♂️ Pesas</li>
-        </ul>
+
+      <!-- About -->
+      <div class="about-box">
+        <h3>🧑‍💻 About me</h3>
+        <p>
+          Soy un ingeniero en informática autodidacta con afición por Godot, Rust
+          y la cultura pixel. Me encanta mezclar datos + diseño + gameplay para
+          crear experiencias memorables.
+        </p>
       </div>
     </section>
 
-    <!-- 🛠️ Aviso de construcción -->
+    <!-- ========= SKILLS ========= -->
+    <section id="skills">
+      <h1>Skills</h1>
+
+      <!-- Lenguajes -->
+      <div class="skill-box">
+        <h2><i class="devicon-bash-plain"></i> Languages</h2>
+        <div class="skill-grid">
+          <div class="tech-card"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+          <div class="tech-card"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+          <div class="tech-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="tech-card"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="tech-card"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+          <div class="tech-card"><i class="devicon-sqlite-plain colored"></i><span>SQL</span></div>
+          <!-- Añade más según necesites -->
+        </div>
+      </div>
+
+      <!-- Frameworks / Librerías -->
+      <div class="skill-box">
+        <h2><i class="devicon-react-original"></i> Frameworks & Librerías</h2>
+        <div class="skill-grid">
+          <div class="tech-card"><i class="devicon-react-original colored"></i><span>React</span></div>
+          <div class="tech-card"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+          <div class="tech-card"><i class="devicon-godot-plain colored"></i><span>Godot</span></div>
+          <!-- … -->
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="skill-box">
+        <h2><i class="devicon-docker-plain"></i> Tools</h2>
+        <div class="skill-grid">
+          <div class="tech-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+          <div class="tech-card"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+          <!-- … -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Aviso construcción -->
     <section class="under-construction">
       <div class="warning-icon">🚧</div>
       <h2>Este sitio está en construcción</h2>
-      <p>Gracias por tu visita. Estoy trabajando constantemente en mejorar y agregar más contenido. ¡Vuelve pronto!</p>
+      <p>Sigo puliendo detalles. ¡Gracias por pasar!</p>
     </section>
   </main>
 
-  <!-- Scripts -->
+  <!-- =============== SCRIPTS =============== -->
   <script src="main.js"></script>
   <script src="interactions.js"></script>
+  <script>
+    // Reloj local Chile
+    function updateClock(){
+      const now=new Date();
+      const opts={hour:'2-digit',minute:'2-digit'};
+      document.getElementById('clClock').textContent='🇨🇱 '+now.toLocaleTimeString('es-CL',opts);
+    }
+    updateClock();
+    setInterval(updateClock,60000); // actualiza cada minuto
+
+    // Scroll suave anclas
+    document.querySelectorAll('a[href^="#"]').forEach(link=>{
+      link.addEventListener('click',e=>{
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
 </body>
 </html>
