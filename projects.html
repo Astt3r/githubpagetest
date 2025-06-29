@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astt3r – Portfolio</title>
+
+  <!-- Fuente pixel -->
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Iconos Devicon (comparten hoja con technologies.html) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css" />
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="arrow">▶</div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="technologies.html">Tecnologías</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Interruptor de tema -->
+  <label class="theme-switch">
+    <input type="checkbox" id="themeToggle">
+    <span class="slider"></span>
+  </label>
+
+
+  <!-- ===== Contenido ===== -->
+<main>
+  <h1>Proyectos</h1>
+  <p>Algunos de mis proyectos personales y colaborativos.</p>
+
+  <div class="project-container">
+    <div class="project-grid">
+
+      <!-- Junta Transparente -->
+      <div class="project-card">
+        <a href="https://github.com/fit-dran/juntatransparente" target="_blank">
+          <img src="assets/juntatransparente.png" alt="Junta Transparente">
+          <div class="project-info">
+            <h2>Junta Transparente</h2>
+            <p>Visualizador de datos de juntas vecinales y asignaciones públicas. Parte de mi proyecto de título</p>
+            <div class="tech-tags">
+              <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="">HTML</div>
+              <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="">CSS</div>
+              <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="">JavaScript</div>
+              <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="">PHP</div>
+              <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="">MySQL</div>
+              <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="">React</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Blind Hero -->
+      <div class="project-card">
+        <a href="https://arxenical.itch.io/blind-hero" target="_blank">
+          <img src="assets/blindhero.png" alt="Blind Hero">
+          <div class="project-info">
+            <h2>Blind Hero</h2>
+            <p>Minijuego arcade que le saca provecho al RigidBody2D y lo usa a su favor.</p>
+            <div class="tech-tags">
+              <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="">Unity</div>
+              <div class="tech-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="">C#</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+
+  <!-- Script externo -->
+<script src="main.js"></script>
+<script src="interactions.js"></script>
+
+</body>
+</html>

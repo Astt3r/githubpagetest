@@ -1,1 +1,70 @@
-<h1>Github Page Test<h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astt3r – Portfolio</title>
+
+  <!-- Fuente pixel -->
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Iconos Devicon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css" />
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="arrow">▶</div>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="technologies.html">Tecnologías</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Interruptor de tema -->
+  <label class="theme-switch">
+    <input type="checkbox" id="themeToggle">
+    <span class="slider"></span>
+  </label>
+
+  <!-- ===== Contenido ===== -->
+  <main class="profile-main">
+    <section class="profile-card">
+      <div class="profile-img">
+        <!-- Ícono o foto -->
+        <img src="assets/avatar-placeholder.png" alt="Foto de Alejandro Robles">
+      </div>
+      <div class="profile-info">
+        <h1>Alejandro Robles</h1>
+        <h3>Chileno · 24 años</h3>
+        <p><strong>Ingeniero en Ejecución en Informática</strong></p>
+        <p>Desarrollador web & creador indie con gusto por los datos y el diseño.</p>
+        <ul class="tags">
+          <li class="tag">💻 Web Dev</li>
+          <li class="tag">🗃️ Bases de Datos</li>
+          <li class="tag">🎮 GameDev</li>
+          <li class="tag">🏋️‍♂️ Pesas</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 🛠️ Aviso de construcción -->
+    <section class="under-construction">
+      <div class="warning-icon">🚧</div>
+      <h2>Este sitio está en construcción</h2>
+      <p>Gracias por tu visita. Estoy trabajando constantemente en mejorar y agregar más contenido. ¡Vuelve pronto!</p>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+  <script src="interactions.js"></script>
+</body>
+</html>
