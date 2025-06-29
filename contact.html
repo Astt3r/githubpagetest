@@ -3,78 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Astt3r – Portfolio</title>
+  <title>Contacto – Astt3r</title>
 
-  <!-- Fuente pixel -->
+  <!-- Fuentes & Devicon -->
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Iconos Devicon (comparten hoja con technologies.html) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css" />
 
-  <!-- Estilos principales -->
+  <!-- CSS Global -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Ajustes visuales específicos -->
+  <style>
+    /* Centrar el contenedor y limitar ancho */
+    main#contact{max-width:1000px;margin:0 auto;text-align:center;padding-top:60px;}
+
+    /* Ajustar grid para que no crezca demasiado */
+    .contact-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));}
+
+    /* Sobrescribimos tamaño de íconos por si vienen con atributos width/height en el SVG */
+    .contact-card img{
+      width:64px;height:64px;flex-shrink:0;
+      object-fit:contain;object-position:center;
+    }
+  </style>
 </head>
-<body>
-  <!-- Sidebar -->
+<body class="starfield">
+  <!-- =============== SIDEBAR =============== -->
   <div class="sidebar">
     <div class="arrow">▶</div>
     <nav class="nav-links">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#hero">Inicio</a></li>
+        <li><a href="index.html#skills">Tecnologías</a></li>
         <li><a href="projects.html">Proyectos</a></li>
-        <li><a href="technologies.html">Tecnologías</a></li>
         <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- Interruptor de tema -->
+  <!-- Switch Tema -->
   <label class="theme-switch">
-    <input type="checkbox" id="themeToggle">
+    <input type="checkbox" id="themeToggle" />
     <span class="slider"></span>
   </label>
 
+  <!-- =============== CONTENIDO =============== -->
+  <main id="contact">
+    <h1>Contacto</h1>
+    <p>¡Hablemos! Puedes encontrarme o escribirme en estas plataformas:</p>
 
-  <!-- ===== Contenido ===== -->
-<main>
-  <h1>Contacto</h1>
-  <p>Puedes encontrarme o escribirme a través de estas plataformas:</p>
-
-  <div class="contact-grid">
-
-    <!-- Gmail -->
-    <div class="contact-card">
-      <img src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" alt="Gmail" />
-      <div class="contact-info">
-        <h2>Gmail</h2>
-        <p><a href="mailto:alejano2000@gmail.com">alejano2000@gmail.com</a></p>
+    <div class="contact-grid">
+      <!-- Gmail -->
+      <div class="contact-card">
+        <img src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" alt="Gmail" />
+        <div class="contact-info">
+          <h2>Gmail</h2>
+          <p><a href="mailto:alejano2000@gmail.com">alejano2000@gmail.com</a></p>
+        </div>
       </div>
-    </div>
 
-    <!-- Discord -->
-    <div class="contact-card">
-      <img src="https://www.svgrepo.com/show/353655/discord-icon.svg" alt="Discord" />
-      <div class="contact-info">
-        <h2>Discord</h2>
-        <p><code>https://discord.gg/REWh3TGj</code></p>
+      <!-- Discord -->
+      <div class="contact-card">
+        <img src="https://www.svgrepo.com/show/353655/discord-icon.svg" alt="Discord" />
+        <div class="contact-info">
+          <h2>Discord</h2>
+          <p><a href="https://discord.gg/REWh3TGj" target="_blank">Mándame un DM</a></p>
+        </div>
       </div>
-    </div>
 
-    <!-- GitHub -->
-    <div class="contact-card">
-      <img src="https://www.svgrepo.com/show/217753/github.svg" alt="GitHub" />
-      <div class="contact-info">
-        <h2>GitHub</h2>
-        <p><a href="https://github.com/astt3r" target="_blank">github.com/astt3r</a></p>
+      <!-- GitHub -->
+      <div class="contact-card">
+        <img src="https://www.svgrepo.com/show/217753/github.svg" alt="GitHub" />
+        <div class="contact-info">
+          <h2>GitHub</h2>
+          <p><a href="https://github.com/astt3r" target="_blank">github.com/astt3r</a></p>
+        </div>
       </div>
+
     </div>
+  </main>
 
-  </div>
-</main>
-
-  <!-- Script externo -->
-<script src="main.js"></script>
-<script src="interactions.js"></script>
-
+  <!-- =============== SCRIPTS =============== -->
+  <script src="main.js"></script>
+  <script src="interactions.js"></script>
 </body>
 </html>
