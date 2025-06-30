@@ -12,19 +12,47 @@
   <!-- CSS Global -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Ajustes visuales específicos -->
+  <!-- Ajustes visuales específicos para la sección contacto -->
   <style>
-    /* Centrar el contenedor y limitar ancho */
-    main#contact{max-width:1000px;margin:0 auto;text-align:center;padding-top:60px;}
-
-    /* Ajustar grid para que no crezca demasiado */
-    .contact-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));}
-
-    /* Sobrescribimos tamaño de íconos por si vienen con atributos width/height en el SVG */
-    .contact-card img{
-      width:64px;height:64px;flex-shrink:0;
-      object-fit:contain;object-position:center;
+    main#contact{
+      max-width:1000px;
+      margin:0 auto;
+      text-align:center;
+      padding-top:60px;
     }
+    /* Grid flexible */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+      gap:28px;
+      margin-top:40px;
+    }
+    /* Card estilo unificado con el resto del sitio */
+    .contact-card{
+      background:var(--bg-card);
+      border:2px solid var(--border);
+      border-radius:12px;
+      padding:24px 20px;
+      box-shadow:0 0 0 2px #00000030;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      transition:transform .2s,border-color .2s;
+    }
+    .contact-card:hover{
+      transform:scale(1.05);
+      border-color:var(--accent);
+    }
+    .contact-card img{
+      width:56px;height:56px;object-fit:contain;
+      filter:drop-shadow(0 0 3px #00000040);
+    }
+    .contact-info h2{
+      font-size:20px;color:var(--accent);margin-bottom:4px;
+    }
+    .contact-info p a{color:var(--text);text-decoration:none;}
+    .contact-info p a:hover{text-decoration:underline;}
   </style>
 </head>
 <body class="starfield">
@@ -50,7 +78,7 @@
   <!-- =============== CONTENIDO =============== -->
   <main id="contact">
     <h1>Contacto</h1>
-    <p>¡Hablemos! Puedes encontrarme o escribirme en estas plataformas:</p>
+    <p>¡Hablemos! Estos son mis canales favoritos:</p>
 
     <div class="contact-grid">
       <!-- Gmail -->
@@ -80,6 +108,14 @@
         </div>
       </div>
 
+      <!-- LinkedIn -->
+      <div class="contact-card">
+        <img src="https://www.svgrepo.com/show/448234/linkedin.svg" alt="LinkedIn" />
+        <div class="contact-info">
+          <h2>LinkedIn</h2>
+          <p><a href="https://www.linkedin.com/in/tu-perfil" target="_blank">/in/tu-perfil</a></p>
+        </div>
+      </div>
     </div>
   </main>
 
