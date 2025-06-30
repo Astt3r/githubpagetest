@@ -52,24 +52,43 @@
   </style>
 </head>
 <body class="starfield">
-<!-- Sidebar existente -->
-<div class="sidebar">
-  <div class="arrow">▶</div>
-  <nav class="nav-links">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="projects.html">Proyectos</a></li>
-      <li><a href="index.html#skills">Tecnologías</a></li>
-      <li><a href="contact.html">Contacto</a></li>
-    </ul>
-  </nav>
-</div>
-<!-- Switch tema -->
-<label class="theme-switch">
-  <input type="checkbox" id="themeToggle" />
-  <span class="slider"></span>
-</label>
 
+    <!-- ===== NAVBAR SUPERIOR (escritorio & móvil) ===== -->
+    <header class="top-nav">
+    <!-- Botón hamburguesa se muestra sólo ≤720 px -->
+    <button id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <!-- Branding / logo -->
+    <a class="brand" href="index.html">Astt3r (´・ω・｀)</a>
+
+    <!-- enlaces visibles en escritorio -->
+    <nav class="nav-links">
+        <ul>
+        <li><a href="index.html#hero">Inicio</a></li>
+        <li><a href="index.html#skills">Tecnologías</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <!-- Panel deslizante reutilizado para móvil -->
+    <nav id="mobileNav" class="mobile-nav">
+    <ul>
+        <li><a href="index.html#hero">Inicio</a></li>
+        <li><a href="index.html#skills">Tecnologías</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <button id="themeToggleIcon" class="theme-icon" aria-label="Cambiar tema">🌙</button>
+    <!-- Burbuja informativa sobre el botón -->
+    <div id="themeBubble" class="bubble-hint">
+  ¿Quieres usar el tema claro?<br>Toca aquí</div>
+    </nav>
+
+
+
+  <!-- =============== CONTENIDO =============== -->
 <main>
   <section class="projects-wrapper">
     <h1>Proyectos</h1>

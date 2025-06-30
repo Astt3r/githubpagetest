@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astt3r – Portfolio</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+    <body class="starfield">
+
+    <!-- ===== NAVBAR SUPERIOR (escritorio & móvil) ===== -->
+    <header class="top-nav">
+    <!-- Botón hamburguesa se muestra sólo ≤720 px -->
+    <button id="menuToggle" aria-label="Abrir menú">☰</button>
+
+    <!-- Branding / logo -->
+    <a class="brand" href="index.html">Astt3r (´・ω・｀)</a>
+
+    <!-- enlaces visibles en escritorio -->
+    <nav class="nav-links">
+        <ul>
+        <li><a href="index.html#hero">Inicio</a></li>
+        <li><a href="index.html#skills">Tecnologías</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <!-- Panel deslizante reutilizado para móvil -->
+    <nav id="mobileNav" class="mobile-nav">
+    <ul>
+        <li><a href="index.html#hero">Inicio</a></li>
+        <li><a href="index.html#skills">Tecnologías</a></li>
+        <li><a href="projects.html">Proyectos</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <button id="themeToggleIcon" class="theme-icon" aria-label="Cambiar tema">🌙</button>
+    <!-- Burbuja informativa sobre el botón -->
+    <div id="themeBubble" class="bubble-hint">
+  ¿Quieres usar el tema claro?<br>Toca aquí</div>
+    </nav>
+
+
+
+  <!-- =============== CONTENIDO =============== -->
+
+
+
+  <!-- =============== SCRIPTS =============== -->
+  <script src="main.js"></script>
+  <script src="interactions.js"></script>
+  <script>
+    // Reloj local Chile
+    function updateClock(){
+      const now=new Date();
+      const opts={hour:'2-digit',minute:'2-digit'};
+      document.getElementById('clClock').textContent='🇨🇱 '+now.toLocaleTimeString('es-CL',opts);
+    }
+    updateClock();
+    setInterval(updateClock,60000); // actualiza cada minuto
+
+    // Scroll suave anclas
+    document.querySelectorAll('a[href^="#"]').forEach(link=>{
+      link.addEventListener('click',e=>{
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>

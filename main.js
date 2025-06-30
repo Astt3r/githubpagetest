@@ -1,17 +1,42 @@
-/* ===== Tema claro / oscuro ===== */
-const toggle = document.getElementById('themeToggle');
-const root   = document.body;
+/* ===== TEMA CLARO / OSCURO CON ÍCONO FLOTANTE ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  const themeIcon = document.getElementById('themeToggleIcon');
+  const bubble = document.getElementById('themeBubble');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme');
+  const body = document.body;
 
-/* cargar preferencia */
-if (localStorage.theme === 'light') {
-  root.classList.add('light');
-  toggle.checked = true;
-}
-/* cambiar tema */
-toggle.addEventListener('change', () => {
-  const light = toggle.checked;
-  root.classList.toggle('light', light);
-  localStorage.theme = light ? 'light' : 'dark';
+  // Aplicar tema guardado o sistema
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    body.classList.remove('light');
+    themeIcon.textContent = '☀️';
+  } else {
+    body.classList.add('light');
+    themeIcon.textContent = '🌙';
+  }
+
+  // Mostrar bubble si no se ha mostrado antes
+  if (!localStorage.getItem('theme_hint_shown') && bubble) {
+    setTimeout(() => {
+      bubble.classList.add('visible');
+      setTimeout(() => bubble.classList.remove('visible'), 6000);
+    }, 1500);
+    localStorage.setItem('theme_hint_shown', 'true');
+  }
+
+  // Cambiar tema al tocar el ícono
+  themeIcon.addEventListener('click', () => {
+    const isLight = body.classList.toggle('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    themeIcon.textContent = isLight ? '🌙' : '☀️';
+
+    // Si el bubble está activo o fue mostrado, actualizar texto y mostrar nuevamente
+    if (bubble) {
+      bubble.innerHTML = 'Puedes alternar entre temas al tocar';
+      bubble.classList.add('visible');
+      setTimeout(() => bubble.classList.remove('visible'), 4000);
+    }
+  });
 });
 
 /* ===== UTILIDAD: habilita navegación flechas si hay +2 tarjetas ===== */
@@ -44,18 +69,12 @@ function enableArrowNavigation(container) {
   }
 }
 
-
-/* ===== MOBILE MENU ===== */
+/* ===== MENÚ MÓVIL ===== */
 document.addEventListener('DOMContentLoaded', () => {
   const btn   = document.getElementById('menuToggle');
   const panel = document.getElementById('mobileNav');
-  const themeCheckbox = document.getElementById('mobileTheme');
 
   if (!btn || !panel) return;
-
-  // Sincroniza estado del tema con el switch del menú
-  themeCheckbox.checked = toggle.checked;
-  themeCheckbox.addEventListener('change', () => toggle.click());
 
   btn.addEventListener('click', () => {
     panel.classList.toggle('open');
@@ -66,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', () => panel.classList.remove('open'));
   });
 });
+
 
 
 /* ===== EJECUCIÓN SOBRE TODOS LOS CAROUSELES EXISTENTES ===== */
